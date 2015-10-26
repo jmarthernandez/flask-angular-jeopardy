@@ -1,0 +1,22 @@
+{
+  "name": "flask-angular-jeopardy",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jmarthernandez/flask-angular-jeopardy",
+  "authors": [
+    "Justin Hernandez <jmarthernandez@gmail.com>"
+  ],
+  "description": "Random jeopardy questions",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-material": "~0.11.4"
+  }
+}

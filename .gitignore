@@ -5,5 +5,8 @@ __pycache__/
 # Virtualenv
 env/
 
+# Bower
+bower_components/
+
 # Mac
 *.DS_Store
