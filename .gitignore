@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 
+# env vars
+.env
+
 # Virtualenv
 env/
 
