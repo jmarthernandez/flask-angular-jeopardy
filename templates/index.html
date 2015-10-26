@@ -3,12 +3,57 @@
   <title>Random Jeopardy</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('bower.static', filename='angular-material/angular-material.css') }}">
 </head>
-<body>
+<body ng-app="myApp" ng-controller="QuestionController">
+  <div class="container" ng-cloak>
+    <h1>Random Jeopardy</h1>
+    <p>
+      The original Random Jeopardy was a node/express and mithril application.  This app has been ported to flask and angular.
+    </p>
+    <a href="http://random-jeopardy.herokuapp.com/">Original Random Jeopardy</a>
+    <a href="http://github.com/jmarthernandez">Source Code</a>
+    <md-content>
+      <md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom>
+        <md-tab label="question">
+          <md-content class="md-padding">
+            <h2 class="md-display-1">Question</h2>
+            <p ng-bind="question.question"></p>
+            <h2 class="md-display-1">Category</h2>
+            <p ng-bind="question.category"></p>
+            <h2 class="md-display-1">Value</h2>
+            <p ng-bind="question.value"></p>
+          </md-content>
+        </md-tab>
+        <md-tab label="answer">
+          <md-content class="md-padding">
+            <h2 class="md-display-1">Answer</h2>
+            <p ng-bind="question.answer"></p>
+            <md-button class="md-raised md-primary" ng-click="getQuestion()">New Question</md-button>
+          </md-content>
+        </md-tab>
+        <md-tab label="info">
+          <md-content class="md-padding">
+            <h2 class="md-display-1">Round</h2>
+            <p ng-bind="question.round"></p>
+            <h2 class="md-display-1">Air Date</h2>
+            <p ng-bind="question.air_date"></p>
+            <h2 class="md-display-1">Show Number</h2>
+            <p ng-bind="question.show_number"></p>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+  </div>
 
+  <!-- Bower Components -->
   <script src="{{ url_for('bower.static', filename='angular/angular.min.js') }}"></script>
   <script src="{{ url_for('bower.static', filename='angular-aria/angular-aria.min.js') }}"></script>
   <script src="{{ url_for('bower.static', filename='angular-animate/angular-animate.min.js') }}"></script>
   <script src="{{ url_for('bower.static', filename='angular-material/angular-material.min.js') }}"></script>
+
+  <!-- App Components -->
+  <script src="static/js/app.js"></script>
+  <script src="static/js/questionCtrl.js"></script>
+  <script src="static/js/questionFactory.js"></script>
 
 </body>
 </html>
