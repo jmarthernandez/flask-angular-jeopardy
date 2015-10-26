@@ -7,7 +7,10 @@ app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = create_engine(os.environ['DATABASE_URL'])
 
-# convert sql row to python dict
+@app.route('/')
+def index():
+  return render_template('index.html')
+
 def alchemyencoder(obj):
   """JSON encoder function for SQLAlchemy special classes."""
   if isinstance(obj, datetime.date):
