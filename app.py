@@ -1,9 +1,13 @@
 from flask import Flask, json, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.bower import Bower
 from sqlalchemy import create_engine
 import os
 
+
+
 app = Flask(__name__)
+Bower(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = create_engine(os.environ['DATABASE_URL'])
 
